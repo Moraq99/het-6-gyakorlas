@@ -20,6 +20,6 @@ public class Practice_20220402_03Test {
 
     @Test
     public void getTotalSnow() {
-        assertEquals(333, Practice_20220402_03.getSnowyDays(3));
+        assertEquals(333, Practice_20220402_03.getTotalSnow(3));
     }
 }
