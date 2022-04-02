@@ -101,18 +101,49 @@ public final class Gigapolis {
         return precipitation;
     }
 
-    /* public static String[] getForecasts() {
+    /**
+     * Forecast data for the whole city in the following format:
+     * ID;DATE;TEMPERATURE;PRECIPITATION
+     * @return forecast data
+     */
+    public static String[] getForecasts() {
         String[] dates = getDates();
-        int[][] data = getTemperature();
+        int[][] temperatureData = getTemperature();
+        int[][] precipitationData = getPrecipitation();
 
-        String[] forecasts = new String[dates.length * 3];
+        String[] forecasts = new String[dates.length * 2];
 
         for (int i = 0; i < dates.length; i++) {
+            String suffix = dates[i].substring(5, 7)
+                    + dates[i].substring(8);
+
+            int temperature = (temperatureData[0][i] + temperatureData[1][i]) / 2;
+            int precipitation = (precipitationData[0][i] + precipitationData[1][i]) / 2;
             String forecast = "ALFA"
-                    + dates[i].substring(5, 2) + dates[i].substring(7)
-            forecasts[i * 3] = (data[0][i] + data[1][i]
+                    + suffix
+                    + ";"
+                    + dates[i]
+                    + ";"
+                    + temperature
+                    + ";"
+                    + precipitation;
+
+            forecasts[i * 2] = forecast;
+
+            temperature = (temperatureData[1][i] + temperatureData[2][i]) / 2;
+            precipitation = (precipitationData[1][i] + precipitationData[2][i]) / 2;
+            forecast = "BETA"
+                    + suffix
+                    + ";"
+                    + dates[i]
+                    + ";"
+                    + temperature
+                    + ";"
+                    + precipitation;
+
+            forecasts[i * 2 + 1] = forecast;
         }
 
         return forecasts;
-    } */
+    }
 }

@@ -11,5 +11,8 @@ public class App
         String dates[] = Gigapolis.getDates();
         int temperature = Practice_20220402_01.getTemperatureDistrictI(2);
         System.out.println( "3. napon érvényes hőmérséklet: " + temperature);
+
+        String forecasts[] = Gigapolis.getForecasts();
+        System.out.println("Hello World! :)");
     }
 }
