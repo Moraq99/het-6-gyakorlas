@@ -52,7 +52,7 @@ public class Practice_20220402_02Test {
 
     @Test
     public void getWarmDays() {
-        assertEquals(5, Practice_20220402_02.getWarmDays(1));
+        assertEquals(6, Practice_20220402_02.getWarmDays(1));
         assertEquals(4, Practice_20220402_02.getWarmDays(2));
         assertEquals(3, Practice_20220402_02.getWarmDays(3));
     }
