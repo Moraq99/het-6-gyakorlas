@@ -1,6 +1,6 @@
 package hu.progmatic;
 
-public class Practice_20220405_05 {
+public class Practice_20220402_05 {
     /**
      * Az első olyan napot adja vissza, amelyik melegebb volt a megadott hőmérsékletnél.
      * Nem csak az első 4 hetet kell figyelembe vennie.
