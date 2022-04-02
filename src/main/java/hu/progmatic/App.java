@@ -9,6 +9,7 @@ public class App
     public static void main( String[] args )
     {
         String dates[] = Gigapolis.getDates();
-        System.out.println( "Hello World!" );
+        int temperature = Practice_20220402_01.getTemperatureDistrictI(2);
+        System.out.println( "3. napon érvényes hőmérséklet: " + temperature);
     }
 }
