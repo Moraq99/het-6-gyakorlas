@@ -100,4 +100,19 @@ public final class Gigapolis {
 
         return precipitation;
     }
+
+    /* public static String[] getForecasts() {
+        String[] dates = getDates();
+        int[][] data = getTemperature();
+
+        String[] forecasts = new String[dates.length * 3];
+
+        for (int i = 0; i < dates.length; i++) {
+            String forecast = "ALFA"
+                    + dates[i].substring(5, 2) + dates[i].substring(7)
+            forecasts[i * 3] = (data[0][i] + data[1][i]
+        }
+
+        return forecasts;
+    } */
 }

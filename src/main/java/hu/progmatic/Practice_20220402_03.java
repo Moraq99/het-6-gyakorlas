@@ -1,5 +1,7 @@
 package hu.progmatic;
 
+import java.util.Arrays;
+
 public class Practice_20220402_03 {
     /**
      * Az adott kerülethez tartozó adatsort visszaadó metódus.
@@ -10,7 +12,15 @@ public class Practice_20220402_03 {
      * @return adatsor
      */
     public static int[] getTemperatureData(int district, int dayFrom, int dayTo) {
-        return null;
+        int[] temperatures = new int[dayTo - dayFrom + 1];
+
+        for (int i = dayFrom; i <= dayTo; i++) {
+            temperatures[i - dayFrom] = Gigapolis.getTemperature(district, i);
+        }
+
+        return temperatures;
+
+        // Arrays.copyOf([...]);
     }
 
     /**
@@ -21,7 +31,18 @@ public class Practice_20220402_03 {
      * @return havas napok száma
      */
     public static int getSnowyDays(int district) {
-        return 0;
+        int[][] temperatureData = Gigapolis.getTemperature();
+        int[][] precipitationData = Gigapolis.getPrecipitation();
+
+        int snowyDays = 0;
+
+        for (int i = 0; i < temperatureData[district - 1].length; i++) {
+            if (temperatureData[district - 1][i] < 0 && precipitationData[district - 1][i] > 0) {
+                snowyDays++;
+            }
+        }
+
+        return snowyDays;
     }
 
     /**
@@ -31,6 +52,18 @@ public class Practice_20220402_03 {
      * @return összes leesett hó
      */
     public static int getTotalSnow(int district) {
-        return 0;
+        int[][] temperatureData = Gigapolis.getTemperature();
+        int[][] precipitationData = Gigapolis.getPrecipitation();
+
+        int totalSnow = 0;
+
+        for (int i = 0; i < temperatureData[district - 1].length; i++) {
+            // csapadék nagyobb nullát nem kell ellenőrizni, mivel +0 nem okoz gondot
+            if (temperatureData[district - 1][i] < 0 && precipitationData[district - 1][i] > 0) {
+                totalSnow += precipitationData[district - 1][i];
+            }
+        }
+
+        return totalSnow;
     }
 }
