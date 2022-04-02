@@ -56,4 +56,10 @@ public class Practice_20220402_02Test {
         assertEquals(4, Practice_20220402_02.getWarmDays(2));
         assertEquals(3, Practice_20220402_02.getWarmDays(3));
     }
+
+    @Test
+    public void getWarmestDay() {
+        // TDD - Test Driven Development
+        assertEquals(30, Practice_20220402_02.getWarmestDay());
+    }
 }

@@ -128,4 +128,9 @@ public class Practice_20220402_02 {
 
         return warmDays;
     }
+
+    public static int getWarmestDay() {
+        int district = getWarmestDistrict();
+        return getMaxTemperatureByDistrict(district);
+    }
 }

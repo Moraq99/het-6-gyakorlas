@@ -16,7 +16,7 @@ public class Practice_20220402_03 {
     /**
      * Havas napok számát visszaadó metódus.
      * Az első 4 hét adatait kell feldolgoznia.
-     * Egy nap akkor havas, ha volt csapadék és a hőmérséklet <= 0.
+     * Egy nap akkor havas, ha volt csapadék és a hőmérséklet < 0.
      * @param district a kerület száma (I. = 1)
      * @return havas napok száma
      */
