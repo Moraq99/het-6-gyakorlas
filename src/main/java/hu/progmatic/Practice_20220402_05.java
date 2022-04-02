@@ -9,7 +9,13 @@ public class Practice_20220402_05 {
      * @return első talált nap indexe
      */
     public static int getFirstDayWarmerThan(int district, int temperature) {
-        return -1;
+        int day = 0;
+
+        while (Gigapolis.getTemperature(district, day) <= temperature) {
+            day++;
+        }
+
+        return day;
     }
 
     /**
@@ -20,7 +26,13 @@ public class Practice_20220402_05 {
      * @return első talált nap indexe
      */
     public static int getFirstDayColderThan(int district, int temperature) {
-        return -1;
+        int day = 0;
+
+        while (Gigapolis.getTemperature(district, day) >= temperature) {
+            day++;
+        }
+
+        return day;
     }
 
     /**
@@ -32,6 +44,17 @@ public class Practice_20220402_05 {
      * @return első olyan nap indexe, amikor az összesen leesett csapadék eléri a megadott értéket
      */
     public static int getPrecipitationTotalAtLeast(int district, int dayFrom, int precipitation) {
-        return -1;
+        int total = 0;
+        int day = dayFrom;
+
+        do {
+            total += Gigapolis.getPrecipitation(district, day);
+
+            if (total < precipitation) {
+                day++;
+            }
+        } while (total < precipitation);
+
+        return day;
     }
 }

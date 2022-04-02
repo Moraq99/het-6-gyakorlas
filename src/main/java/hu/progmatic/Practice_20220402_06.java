@@ -8,7 +8,8 @@ public class Practice_20220402_06 {
      * @return hőmérséklet
      */
     public static int getTemperatureFromForecast(String forecast) {
-        return 0;
+        String[] fields = forecast.split(";");
+        return Integer.parseInt(fields[2]);
     }
 
     /**
@@ -17,7 +18,7 @@ public class Practice_20220402_06 {
      * @return az ALFA meteorológiai szolgálat készítette-e az előrejelzést?
      */
     public static boolean isAlfaForecast(String forecast) {
-        return false;
+        return forecast.startsWith("ALFA");
     }
 
     /**
@@ -26,7 +27,8 @@ public class Practice_20220402_06 {
      * @return hónap szövegesen
      */
     public static String getMonthFromForecast(String forecast) {
-        return null;
+        String[] fields = forecast.split(";");
+        return fields[1].substring(0, 4) + fields[1].substring(5, 7);
     }
 
     /**
@@ -34,7 +36,16 @@ public class Practice_20220402_06 {
      * @return előrejelzések száma
      */
     public static int getAlfaForecastCount() {
-        return 0;
+        String[] forecasts = Gigapolis.getForecasts();
+        int counter = 0;
+
+        for (String forecast : forecasts) {
+            if (forecast.startsWith("ALFA")) {
+                counter++;
+            }
+        }
+
+        return counter;
     }
 
     /**
@@ -42,6 +53,20 @@ public class Practice_20220402_06 {
      * @return maximum csapadék
      */
     public static int getBetaMaxPrecipitation() {
-        return 0;
+        String[] forecasts = Gigapolis.getForecasts();
+        int max = Integer.MIN_VALUE;
+
+        for (String forecast : forecasts) {
+            if (forecast.startsWith("BETA")) {
+                String[] fields = forecast.split(";");
+                int precipitation = Integer.parseInt(fields[3]);
+
+                if (precipitation > max) {
+                    max = precipitation;
+                }
+            }
+        }
+
+        return max;
     }
 }

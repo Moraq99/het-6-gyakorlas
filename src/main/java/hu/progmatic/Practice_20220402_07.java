@@ -7,7 +7,26 @@ public class Practice_20220402_07 {
      * @return hőmérsékletek rendezve
      */
     public static int[] getTemperaturesSorted(int[] temperatures) {
-        return null;
+        int[] clone = temperatures.clone();
+
+        for (int i = 0; i < clone.length - 1; i++) {
+            boolean sorted = true;
+
+            for (int j = 0; j < clone.length - i - 1; j++) {
+                if (clone[j] > clone[j + 1]) {
+                    int swap = clone[j];
+                    clone[j] = clone[j + 1];
+                    clone[j + 1] = swap;
+                    sorted = false;
+                }
+            }
+
+            if (sorted) {
+                break;
+            }
+        }
+
+        return clone;
     }
 
     /**
@@ -18,7 +37,20 @@ public class Practice_20220402_07 {
      * @return esős napok száma
      */
     public static int getRainyDays(int district) {
-        return 0;
+        int[][] temperatureData = Gigapolis.getTemperature();
+        int[] districtTemperature = temperatureData[district - 1];
+        int[][] precipitationData = Gigapolis.getPrecipitation();
+        int[] districtPrecipitation = precipitationData[district - 1];
+
+        int rainyDays = 0;
+
+        for (int i = 0; i < districtTemperature.length; i++) {
+            if (districtTemperature[i] >= 0 && districtPrecipitation[i] > 0) {
+                rainyDays++;
+            }
+        }
+
+        return rainyDays;
     }
 
     /**
@@ -27,7 +59,20 @@ public class Practice_20220402_07 {
      * @return
      */
     public static int getRainTotal() {
-       return 0;
+        int[][] temperatureData = Gigapolis.getTemperature();
+        int[][] precipitationData = Gigapolis.getPrecipitation();
+
+        int rainTotal = 0;
+
+        for (int i = 0; i < temperatureData.length; i++) {
+            for (int j = 0; j < temperatureData[i].length; j++) {
+                if (temperatureData[i][j] >= 0 && precipitationData[i][j] > 0) {
+                    rainTotal += precipitationData[i][j];
+                }
+            }
+        }
+
+        return rainTotal;
     }
 
     /**
@@ -38,7 +83,20 @@ public class Practice_20220402_07 {
      * @return első olyan nap indexe, amikor legalább 10 fokot változott a hőmérséklet az előző naphoz képest
      */
     public static int getFirstBigChangeFrom(int district, int day) {
-        return 0;
+        int index = day;
+        int change;
+
+        do {
+            change = Gigapolis.getTemperature(district, index)
+                    - Gigapolis.getTemperature(district, index + 1);
+            change = Math.abs(change);
+
+            if (change < 10) {
+                index++;
+            }
+        } while (change < 10);
+
+        return index;
     }
 
     /**
@@ -53,7 +111,20 @@ public class Practice_20220402_07 {
      * @return adott leíráshoz tartozó legalacsonyabb hőmérséklet
      */
     public static int getTemperatureFromDescription(String description) {
-        return 0;
+        switch (description) {
+            case "FREEZY":
+                return -273;
+            case "COLD":
+                return -5;
+            case "MILD":
+                return 6;
+            case "WARM":
+                return 21;
+            case "HOT":
+                return 31;
+            default:
+                return -1;
+        }
     }
 
     /**
@@ -62,7 +133,17 @@ public class Practice_20220402_07 {
      * @return leírás
      */
     public static String getDescriptionFromTemperature(int temperature) {
-        return null;
+        if (temperature < -5) {
+            return "FREEZY";
+        } else if (temperature < 6) {
+            return "COLD";
+        } else if (temperature < 21) {
+            return "MILD";
+        } else if (temperature < 31) {
+            return "WARM";
+        } else {
+            return "HOT";
+        }
     }
 
     /**
@@ -76,7 +157,16 @@ public class Practice_20220402_07 {
      * @return változás típusa
      */
     public static String getChangeDescription(int district, int day) {
-        return null;
+        int morning = Gigapolis.getTemperature(district, day);
+        int evening = Gigapolis.getTemperature(district, day + 1);
+
+        if (morning > evening) {
+            return "DECREASE";
+        } else if (morning < evening) {
+            return "INCREASE";
+        } else {
+            return "STAGNATION";
+        }
     }
 
     /**
@@ -86,6 +176,9 @@ public class Practice_20220402_07 {
      * @return igaz, ha növekedett a hőmérséklet
      */
     public static boolean isTemperatureIncreasing(int district, int day) {
-        return false;
+        int morning = Gigapolis.getTemperature(district, day);
+        int evening = Gigapolis.getTemperature(district, day + 1);
+
+        return morning < evening;
     }
 }
