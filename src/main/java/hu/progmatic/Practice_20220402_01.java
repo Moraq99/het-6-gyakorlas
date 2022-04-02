@@ -26,7 +26,7 @@ public class Practice_20220402_01 {
      * @return mért hőmérséklet
      */
     public static int getMidnightTemperatureDistrictII(int day) {
-        return 0;
+        return Gigapolis.getTemperature(2, day + 1);
     }
 
     /**
@@ -38,7 +38,16 @@ public class Practice_20220402_01 {
      * @return szél minimális sebessége csomóban
      */
     public static int getWindSpeedByWarning(String warning) {
-        return 0;
+        switch (warning) {
+            case "ALAPFOK":
+                return 0;
+            case "ELSŐFOK":
+                return 22;
+            case "MÁSODFOK":
+                return 33;
+            default:
+                return -1;
+        }
     }
 
     /**
@@ -47,6 +56,12 @@ public class Practice_20220402_01 {
      * @return viharjelzés
      */
     public static String getWarningByWindSpeed(int windSpeed) {
-        return null;
+        if (windSpeed < 22) {
+            return "ALAPFOK";
+        } else if (windSpeed < 33) {
+            return "ELSŐFOK";
+        } else {
+            return "MÁSODFOK";
+        }
     }
 }
