@@ -6,6 +6,14 @@ import static org.junit.Assert.*;
 
 public class Practice_20220402_04Test {
     @Test
+    public void getTemperaturesColdestToWarmest() {
+        int[] temperatures = {
+                -7, 7, 11, 15, 18, 19, 22
+        };
+        assertArrayEquals(temperatures, Practice_20220402_04.getTemperaturesColdestToWarmest(1, 0, 6));
+    }
+
+    @Test
     public void getDatesColdestToWarmest() {
         String[] dates = {
                 "2250.01.04.",
