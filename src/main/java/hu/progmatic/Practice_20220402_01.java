@@ -1,6 +1,6 @@
 package hu.progmatic;
 
-public class Practice_2022_04_02_01 {
+public class Practice_20220402_01 {
     /**
      * Az I. kerületben 2250.01.01. 00:00-kor mért hőmérsékletet visszaadó metódus.
      * @return mért hőmérséklet
