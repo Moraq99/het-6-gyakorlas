@@ -14,5 +14,8 @@ public class App
 
         String forecasts[] = Gigapolis.getForecasts();
         System.out.println("Hello World! :)");
+
+        System.out.println("ALFA0001".startsWith("ALFA"));
+        System.out.println("XYZALFA001".contains("ALFA"));
     }
 }

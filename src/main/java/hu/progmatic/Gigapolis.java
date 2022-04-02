@@ -146,4 +146,15 @@ public final class Gigapolis {
 
         return forecasts;
     }
+
+    public static int[][] getTeleportationCosts() {
+        return new int[][] {
+                { 0, 79, 99,	77,	30,	67 },
+                { 79, 0, 40,	9,	31,	63 },
+                { 99,	40,	0,	57,	59,	64 },
+                { 77,	9,	57,	0,	31,	66 },
+                { 30,	31,	59,	31,	0,	79 },
+                { 67,	63,	64,	66,	79,	0 }
+        };
+    }
 }
