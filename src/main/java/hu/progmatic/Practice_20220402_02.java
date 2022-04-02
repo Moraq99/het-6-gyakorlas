@@ -7,7 +7,8 @@ public class Practice_20220402_02 {
      * @return az első 4 hét hőmérsékletei
      */
     public static int[] getTemperatureData(int district) {
-        return null;
+        int[][] data = Gigapolis.getTemperature();
+        return data[district - 1];
     }
 
     /**
@@ -16,7 +17,18 @@ public class Practice_20220402_02 {
      * @return a legmagasabb hőmérséklet
      */
     public static int getMaxTemperatureByDistrict(int district) {
-        return 0;
+        int[][] data = Gigapolis.getTemperature();
+        int[] districtData = data[district - 1];
+
+        int max = Integer.MIN_VALUE;
+
+        for (int temperature : districtData) {
+            if (temperature > max) {
+                max = temperature;
+            }
+        }
+
+        return max;
     }
 
     /**
@@ -25,7 +37,18 @@ public class Practice_20220402_02 {
      * @return a legalacsonyabb hőmérséklet
      */
     public static int getMinTemperatureByDistrict(int district) {
-        return 0;
+        int[][] data = Gigapolis.getTemperature();
+        int[] districtData = data[district - 1];
+
+        int min = Integer.MAX_VALUE;
+
+        for (int temperature : districtData) {
+            if (temperature < min) {
+                min = temperature;
+            }
+        }
+
+        return min;
     }
 
     /**
@@ -33,7 +56,19 @@ public class Practice_20220402_02 {
      * @return körzet száma
      */
     public static int getWarmestDistrict() {
-        return 0;
+        int max = Integer.MIN_VALUE;
+        int district = -1;
+
+        for (int i = 1; i <= 3; i++) {
+            int districtMax = getMaxTemperatureByDistrict(i);
+
+            if (districtMax > max) {
+                max = districtMax;
+                district = i;
+            }
+        }
+
+        return district;
     }
 
     /**
@@ -41,7 +76,19 @@ public class Practice_20220402_02 {
      * @return körzet száma
      */
     public static int getColdestDistrict() {
-        return 0;
+        int min = Integer.MAX_VALUE;
+        int district = -1;
+
+        for (int i = 1; i <= 3; i++) {
+            int districtMin = getMinTemperatureByDistrict(i);
+
+            if (districtMin < min) {
+                min = districtMin;
+                district = i;
+            }
+        }
+
+        return district;
     }
 
     /**
@@ -50,7 +97,17 @@ public class Practice_20220402_02 {
      * @return fagyos napok számq
      */
     public static int getFreezyDays(int district) {
-        return 0;
+        int[][] data = Gigapolis.getTemperature();
+        int[] districtData = data[district - 1];
+        int freezyDays = 0;
+
+        for (int temperature : districtData) {
+            if (temperature < 0) {
+                freezyDays++;
+            }
+        }
+
+        return freezyDays;
     }
 
     /**
@@ -59,6 +116,16 @@ public class Practice_20220402_02 {
      * @return forró napok száma
      */
     public static int getWarmDays(int district) {
-        return 0;
+        int[][] data = Gigapolis.getTemperature();
+        int[] districtData = data[district - 1];
+        int warmDays = 0;
+
+        for (int temperature : districtData) {
+            if (temperature >= 25) {
+                warmDays++;
+            }
+        }
+
+        return warmDays;
     }
 }

@@ -34,12 +34,12 @@ public class Practice_20220402_02Test {
     @Test
     public void getWarmestDistrict() {
         int district = Practice_20220402_02.getWarmestDistrict();
-        assertTrue(district >= 1 && district <= 3);
+        assertEquals(1, district);
     }
 
     @Test
     public void getColdestDistrict() {
-        int district = Practice_20220402_02.getWarmestDistrict();
+        int district = Practice_20220402_02.getColdestDistrict();
         assertTrue(district >= 1 && district <= 3);
     }
 
