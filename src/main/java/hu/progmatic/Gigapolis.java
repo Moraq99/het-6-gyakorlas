@@ -13,7 +13,7 @@ public final class Gigapolis {
         String[] dates = new String[28];
 
         for (int i = 0; i < 28; i++) {
-            dates[i] = String.format("2250.01.%02d", i + 1);
+            dates[i] = String.format("2250.01.%02d.", i + 1);
         }
 
         return dates;
