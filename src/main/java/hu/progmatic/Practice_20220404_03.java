@@ -83,4 +83,24 @@ public class Practice_20220404_03 {
     public static boolean findTrafficGreaterThan(int[] traffic, int minTraffic) {
         return false;
     }
+
+    /**
+     * Készítsünk metódust, amelyik megszámolja azokat az azonosítókat,
+     * amik tartalmazzák a "GIGAPOLIS" szöveget.
+     * @param mailIds
+     * @return
+     */
+    public static int getGigapolisMailNumber(String[] mailIds) {
+        return 0;
+    }
+
+    /**
+     * Készítsünk metódust, amelyik növekvő sorrendben rendezi a napi forgalmakat.
+     * A metódus NEM helyben rendez (az eredeti tömböt nem változtathatja meg).
+     * @param traffic
+     * @return
+     */
+    public static int[] sortTraffic(int[] traffic) {
+        return null;
+    }
 }
