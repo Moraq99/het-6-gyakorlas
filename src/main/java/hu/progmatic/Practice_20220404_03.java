@@ -22,13 +22,19 @@ public class Practice_20220404_03 {
      * Egy titokzatos sugárzás az eltelt idő függvényében az alábbiak szerint gyengül:
      * pow(2, -time) = 2 ^ (-time) = "kettő a -időediken :)"
      * currentLevel = pow(2, -time) * startLevel
-     * Mennyi idő alatt lesz biztonságus a helység?
+     * Mennyi idő alatt lesz biztonságos a helység?
      * @param startLevel
      * @param safeLevel
      * @return
      */
     public static int getSafeTime(int startLevel, int safeLevel) {
-        return 0;
+        int time = 0;
+
+        while (Math.pow(2, -time) * startLevel > safeLevel) {
+            time++;
+        }
+
+        return time;
     }
 
     /**
