@@ -28,12 +28,12 @@ public class Practice_20220404_03Test {
 
     @Test
     public void getMaxTraffic() {
-        assertEquals(300, Practice_20220404_03.getIncreases(new int[] {10, 20, 100, 300, 200, 55, 55}));
+        assertEquals(300, Practice_20220404_03.getMaxTraffic(new int[] {10, 20, 100, 300, 200, 55, 55}));
     }
 
     @Test
     public void getMaxIncrease() {
-        assertEquals(200, Practice_20220404_03.getIncreases(new int[] {10, 20, 100, 300, 200, 55, 55}));
+        assertEquals(200, Practice_20220404_03.getMaxIncrease(new int[] {10, 20, 100, 300, 200, 55, 55}));
     }
 
     @Test
