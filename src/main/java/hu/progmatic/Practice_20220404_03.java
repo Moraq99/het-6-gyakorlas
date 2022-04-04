@@ -15,7 +15,19 @@ public class Practice_20220404_03 {
      * @return
      */
     public static int getMinimumTurns(int maxForce, int requiredForce) {
-        return 0;
+        if (maxForce < requiredForce) {
+            return -1;
+        }
+
+        double angle = 0.0;
+        int turns = 0;
+
+        while (Math.sin(angle) * maxForce < requiredForce) {
+            angle += 0.01;
+            turns++;
+        }
+
+        return turns;
     }
 
     /**
@@ -43,7 +55,15 @@ public class Practice_20220404_03 {
      * @return
      */
     public static int getBusyDays(int[] traffic) {
-        return 0;
+        int busyDays = 0;
+
+        for (int t : traffic) {
+            if (t >= 100) {
+                busyDays++;
+            }
+        }
+
+        return busyDays;
     }
 
     /**
@@ -52,7 +72,15 @@ public class Practice_20220404_03 {
      * @return
      */
     public static int getIncreases(int[] traffic) {
-        return 0;
+        int increases = 0;
+
+        for (int i = 0; i < traffic.length - 1; i++) {
+            if (traffic[i] < traffic[i + 1]) {
+                increases++;
+            }
+        }
+
+        return increases;
     }
 
     /**
@@ -61,7 +89,15 @@ public class Practice_20220404_03 {
      * @return
      */
     public static int getMaxTraffic(int[] traffic) {
-        return 0;
+        int max = Integer.MIN_VALUE;
+
+        for (int t : traffic) {
+            if (t > max) {
+                max = t;
+            }
+        }
+
+        return max;
     }
 
     /**
@@ -71,7 +107,17 @@ public class Practice_20220404_03 {
      * @return
      */
     public static int getMaxIncrease(int[] traffic) {
-        return 0;
+        int max = 0;
+
+        for (int i = 0; i < traffic.length - 1; i++) {
+            int change = traffic[i + 1] - traffic[i];
+
+            if (change > max) {
+                max = change;
+            }
+        }
+
+        return max;
     }
 
     /**
@@ -81,6 +127,12 @@ public class Practice_20220404_03 {
      * @return
      */
     public static boolean findTrafficGreaterThan(int[] traffic, int minTraffic) {
+        for (int t : traffic) {
+            if (t > minTraffic) {
+                return true;
+            }
+        }
+
         return false;
     }
 
@@ -91,7 +143,15 @@ public class Practice_20220404_03 {
      * @return
      */
     public static int getGigapolisMailNumber(String[] mailIds) {
-        return 0;
+        int mailNumber = 0;
+
+        for (String mailId : mailIds) {
+            if (mailId.contains("GIGAPOLIS")) {
+                mailNumber++;
+            }
+        }
+
+        return mailNumber;
     }
 
     /**
@@ -101,6 +161,25 @@ public class Practice_20220404_03 {
      * @return
      */
     public static int[] sortTraffic(int[] traffic) {
-        return null;
+        int[] clone = traffic.clone();
+
+        for (int i = 0; i < clone.length - 1; i++) {
+            boolean sorted = true;
+
+            for (int j = 0; j < clone.length - i - 1; j++) {
+                if (clone[j] > clone[j + 1]) {
+                    int swap = clone[j];
+                    clone[j] = clone[j + 1];
+                    clone[j + 1] = swap;
+                    sorted = false;
+                }
+            }
+
+            if (sorted) {
+                break;
+            }
+        }
+
+        return clone;
     }
 }
