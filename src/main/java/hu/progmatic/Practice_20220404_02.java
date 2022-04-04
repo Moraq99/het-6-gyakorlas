@@ -16,14 +16,27 @@ public class Practice_20220404_02 {
     }
 
     /**
-     * 10 kg-ig - 100
-     * 20 kg-ig - 200
-     * 100 kg-ig - 300
-     * 100 kg fölött minden megkezdett 100 kg után további 100
+     * 10 kg-ig - 100 (s)
+     * 20 kg-ig - 200 (m)
+     * 100 kg-ig - 300 (l)
+     * 100 kg fölött minden megkezdett 100 kg után további 100 (xl)
      * @param weight súly
      * @return postai díj
      */
     public int getPostageFee(int weight) {
+        return 0;
+    }
+
+    /**
+     * s -> 0 kg
+     * m -> 10 kg
+     * l -> 20 kg
+     * xl -> 100 kg
+     * érvénytelen érték -> -1
+     * @param category
+     * @return
+     */
+    public int getLowerBound(String category) {
         return 0;
     }
 }
