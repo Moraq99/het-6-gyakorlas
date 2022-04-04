@@ -77,4 +77,14 @@ public class Practice_20220404_02 {
     public boolean isTransit(String routeData) {
         return false;
     }
+
+    /**
+     * Egy tömb az utolsó valahány nap postai forgalmát tartalmazza.
+     * Készítsünk metódust, amelyik visszaadja az utolsó 3 nap átlagát.
+     * @param traffic
+     * @return
+     */
+    public int getAverageLast3Days(int[] traffic) {
+        return 0;
+    }
 }
