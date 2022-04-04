@@ -14,4 +14,16 @@ public class Practice_20220404_02 {
     public static boolean doBoxesFit(int a, int b, int c) {
         return false;
     }
+
+    /**
+     * 10 kg-ig - 100
+     * 20 kg-ig - 200
+     * 100 kg-ig - 300
+     * 100 kg fölött minden megkezdett 100 kg után további 100
+     * @param weight súly
+     * @return postai díj
+     */
+    public int getPostageFee(int weight) {
+        return 0;
+    }
 }
