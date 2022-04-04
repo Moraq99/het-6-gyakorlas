@@ -17,4 +17,51 @@ public class Practice_20220404_03 {
     public static int getMinimumTurns(int maxForce, int requiredForce) {
         return 0;
     }
+
+    /**
+     * Adjuk vissza azoknak a napoknak a számát, amikor a forgalom legalább 100 volt.
+     * @param traffic
+     * @return
+     */
+    public static int getBusyDays(int[] traffic) {
+        return 0;
+    }
+
+    /**
+     * Adjuk vissza azoknak a napoknak a számát, amikor a forgalom emelkedett az előző naphoz képest.
+     * @param traffic
+     * @return
+     */
+    public static int getIncreases(int[] traffic) {
+        return 0;
+    }
+
+    /**
+     * Adjuk vissza a legnagyobb napi forgalmat.
+     * @param traffic
+     * @return
+     */
+    public static int getMaxTraffic(int[] traffic) {
+        return 0;
+    }
+
+    /**
+     * Adjuk vissza a legnagyobb előző naphoz viszonyított emelkedést.
+     * Ha nem volt emelkedés, akkor 0-val térjünk vissza.
+     * @param traffic
+     * @return
+     */
+    public static int getMaxIncrease(int[] traffic) {
+        return 0;
+    }
+
+    /**
+     * Ha találunk a minTraffic-nál nagyobb forgalmat, akkor térjünk vissza igazzal.
+     * @param traffic
+     * @param minTraffic
+     * @return
+     */
+    public static boolean findTrafficGreaterThan(int[] traffic, int minTraffic) {
+        return false;
+    }
 }
