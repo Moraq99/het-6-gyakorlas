@@ -58,10 +58,10 @@ public class Practice_20220404_02Test {
 
     @Test
     public void isTransit() {
-        assertFalse(Practice_20220404_02.isOutgoing("GIGAPOLIS;AAA"));
-        assertFalse(Practice_20220404_02.isOutgoing("GIGAPOLIS;BBB"));
-        assertFalse(Practice_20220404_02.isOutgoing("AAA;GIGAPOLIS"));
-        assertTrue(Practice_20220404_02.isOutgoing("AAA;BBB"));
+        assertFalse(Practice_20220404_02.isTransit("GIGAPOLIS;AAA"));
+        assertFalse(Practice_20220404_02.isTransit("GIGAPOLIS;BBB"));
+        assertFalse(Practice_20220404_02.isTransit("AAA;GIGAPOLIS"));
+        assertTrue(Practice_20220404_02.isTransit("AAA;BBB"));
     }
 
     @Test

@@ -12,7 +12,13 @@ public class Practice_20220404_02 {
      * @return lehet-e vízszintes felületet létrehozni?
      */
     public static boolean doBoxesFit(int a, int b, int c) {
-        return false;
+        if (a == b && b == c) {
+            return true;
+        } else if (a + b == c || a + c == b || b + c == a) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -24,7 +30,16 @@ public class Practice_20220404_02 {
      * @return postai díj
      */
     public static int getPostageFee(int weight) {
-        return 0;
+        if (weight <= 10) {
+            return 100;
+        } else if (weight <= 20) {
+            return 200;
+        } else if (weight <= 100) {
+            return 300;
+        } else {
+            return 300 + ((weight - 101) / 100 + 1) * 100;
+            // return 300 + (int) Math.ceil((weight - 100) / 100.0) * 100;
+        }
     }
 
     /**
@@ -37,7 +52,18 @@ public class Practice_20220404_02 {
      * @return
      */
     public static int getLowerBound(String category) {
-        return 0;
+        switch (category) {
+            case "s":
+                return 0;
+            case "m":
+                return 10;
+            case "l":
+                return 20;
+            case "xl":
+                return 100;
+            default:
+                return -1;
+        }
     }
 
     /**
@@ -50,7 +76,8 @@ public class Practice_20220404_02 {
      * @return expressz küldeményről van-e szó
      */
     public static boolean isExpress(String id) {
-        return false;
+        id = id.trim();
+        return id.startsWith("EX") || id.endsWith("EX");
     }
 
     /**
@@ -64,7 +91,8 @@ public class Practice_20220404_02 {
      * @return
      */
     public static boolean isOutgoing(String routeData) {
-        return false;
+        String[] fields = routeData.split(";");
+        return fields[0].equals("GIGAPOLIS");
     }
 
     /**
@@ -75,7 +103,10 @@ public class Practice_20220404_02 {
      * @return
      */
     public static boolean isTransit(String routeData) {
-        return false;
+        String[] fields = routeData.split(";");
+        return !fields[0].equals("GIGAPOLIS") && !fields[1].equals("GIGAPOLIS");
+        // HA nincsen GIGAPOLIS2 nevű város
+        // return routeData.contains("GIGAPOLIS");
     }
 
     /**
@@ -85,6 +116,6 @@ public class Practice_20220404_02 {
      * @return
      */
     public static int getAverageLast3Days(int[] traffic) {
-        return 0;
+        return (traffic[traffic.length - 3] + traffic[traffic.length - 2] + traffic[traffic.length - 1]) / 3;
     }
 }
