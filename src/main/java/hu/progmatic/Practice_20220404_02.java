@@ -23,7 +23,7 @@ public class Practice_20220404_02 {
      * @param weight súly
      * @return postai díj
      */
-    public int getPostageFee(int weight) {
+    public static int getPostageFee(int weight) {
         return 0;
     }
 
@@ -36,7 +36,7 @@ public class Practice_20220404_02 {
      * @param category
      * @return
      */
-    public int getLowerBound(String category) {
+    public static int getLowerBound(String category) {
         return 0;
     }
 
@@ -49,7 +49,7 @@ public class Practice_20220404_02 {
      * @param id csomag azonosítója
      * @return expressz küldeményről van-e szó
      */
-    public boolean isExpress(String id) {
+    public static boolean isExpress(String id) {
         return false;
     }
 
@@ -63,7 +63,7 @@ public class Practice_20220404_02 {
      * @param routeData
      * @return
      */
-    public boolean isOutgoing(String routeData) {
+    public static boolean isOutgoing(String routeData) {
         return false;
     }
 
@@ -74,7 +74,7 @@ public class Practice_20220404_02 {
      * @param routeData
      * @return
      */
-    public boolean isTransit(String routeData) {
+    public static boolean isTransit(String routeData) {
         return false;
     }
 
@@ -84,7 +84,7 @@ public class Practice_20220404_02 {
      * @param traffic
      * @return
      */
-    public int getAverageLast3Days(int[] traffic) {
+    public static int getAverageLast3Days(int[] traffic) {
         return 0;
     }
 }
