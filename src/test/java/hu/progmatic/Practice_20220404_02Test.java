@@ -50,14 +50,22 @@ public class Practice_20220404_02Test {
 
     @Test
     public void isOutgoing() {
-
+        assertTrue(Practice_20220404_02.isOutgoing("GIGAPOLIS;AAA"));
+        assertTrue(Practice_20220404_02.isOutgoing("GIGAPOLIS;BBB"));
+        assertFalse(Practice_20220404_02.isOutgoing("AAA;GIGAPOLIS"));
+        assertFalse(Practice_20220404_02.isOutgoing("AAA;BBB"));
     }
 
     @Test
     public void isTransit() {
+        assertFalse(Practice_20220404_02.isOutgoing("GIGAPOLIS;AAA"));
+        assertFalse(Practice_20220404_02.isOutgoing("GIGAPOLIS;BBB"));
+        assertFalse(Practice_20220404_02.isOutgoing("AAA;GIGAPOLIS"));
+        assertTrue(Practice_20220404_02.isOutgoing("AAA;BBB"));
     }
 
     @Test
     public void getAverageLast3Days() {
+        assertEquals(2, Practice_20220404_02.getAverageLast3Days(new int[] {5, 7, 3, 1, 2}));
     }
 }
