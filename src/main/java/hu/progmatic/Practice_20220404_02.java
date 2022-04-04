@@ -52,4 +52,29 @@ public class Practice_20220404_02 {
     public boolean isExpress(String id) {
         return false;
     }
+
+    /**
+     * HONNAN;HOVA
+     * "GIGAPOLIS;MEGAPOLIS" -> true
+     * "MEGAPOLIS;GIGAPOLIS" -> false
+     * "GIGAPOLIS;TERAPOLIS" -> true
+     * "TERAPOLIS;GIGAPOLIS" -> false
+     * "MEGAPOLIS;TERAPOLIS" -> false
+     * @param routeData
+     * @return
+     */
+    public boolean isOutgoing(String routeData) {
+        return false;
+    }
+
+    /**
+     * Egy csomag akkor van átutazóban, ha nem GIGAPOLIS-ban adták fel és nem is az a célja.
+     * "TERAPOLIS;GIGAPOLIS" -> false
+     * "MEGAPOLIS;TERAPOLIS" -> true
+     * @param routeData
+     * @return
+     */
+    public boolean isTransit(String routeData) {
+        return false;
+    }
 }
