@@ -39,4 +39,17 @@ public class Practice_20220404_02 {
     public int getLowerBound(String category) {
         return 0;
     }
+
+    /**
+     * "    EXABC123    " -> true
+     * "  ABC4443EX   " -> true
+     * " TREX123AA"     -> false
+     * Az első 2 karakter (szóközöket nem számolva) EX
+     * vagy az utolsó 2 karakter (szóközöket nem számolva) EX.
+     * @param id csomag azonosítója
+     * @return expressz küldeményről van-e szó
+     */
+    public boolean isExpress(String id) {
+        return false;
+    }
 }
