@@ -8,6 +8,12 @@ public class Practice_20220407_01 {
      * @return
      */
     public static boolean doWeHaveAppleFood(String[] foods) {
+        for (String food : foods) {
+            if (food.contains("apple")) {
+                return true;
+            }
+        }
+
         return false;
     }
 
@@ -19,6 +25,14 @@ public class Practice_20220407_01 {
      * @return
      */
     public static int cheapestFoodMoreExpensiveThan(int[] foodPrices, int minPrice) {
-        return 0;
+        int min = Integer.MAX_VALUE;
+
+        for (int foodPrice : foodPrices) {
+            if (foodPrice >= minPrice && foodPrice < min) {
+                min = foodPrice;
+            }
+        }
+
+        return min;
     }
 }
