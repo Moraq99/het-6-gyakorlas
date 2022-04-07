@@ -11,17 +11,23 @@ public class Practice_20220407_06 {
         // kék fények (ki/be) +4
         // füst (ki/be) +8
         // hab (ki/be) +16
+        System.out.println(isFoamOn(15));
+        System.out.println(isFoamOn(19));
+        System.out.println(isFoamOn(20));
+        int flags = 20;
+        System.out.println(setBlueOn(flags));
+        System.out.println(setBlueOff(flags));
     }
 
-    public boolean isFoamOn(int flags) {
-        return false;
+    public static boolean isFoamOn(int flags) {
+        return (flags & 16) != 0;
     }
 
-    public int setBlueOn(int flags) {
-        return 0;
+    public static int setBlueOn(int flags) {
+        return flags | 4;
     }
 
-    public int setBlueOff(int flags) {
-        return 0;
+    public static int setBlueOff(int flags) {
+        return flags & 27;
     }
 }
